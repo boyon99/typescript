@@ -4,5 +4,8 @@
     "target": "ES6",
     "lib": ["ES2015", "DOM"],
     "module": "CommonJS"
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

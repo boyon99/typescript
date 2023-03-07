@@ -21,23 +21,6 @@
 
 <br/>
 
-#### React 프로젝트에서 Typescript 사용할 경우
-
-1. 이미 있는 React 프로젝트에 설치할 경우
-
-```console
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-```
-
-2. React 프로젝트를 새로 생성할 경우
-
-```console
-npx create-react-app my-app --template typescript
-```
-
-<br/>
-
-
 ### 컴파일을 위한 다양한 옵션
 
 1. 터미널에서 직접 컴파일하기
@@ -63,15 +46,7 @@ tsc --init // 초기화하면 `tsconfig.json` 파일이 추가된다.
     "target": "ES6",
     "lib": ["ES2015", "DOM"],
     "module": "CommonJS"
-  },
-  "include": [
-    // 컴파일에 추가할 경로
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    // 컴파일에 제외할 경로
-    "node_modules"
-  ]
+  }
 }
 ```
 
@@ -156,4 +131,6 @@ npx ts-node main.js
 ```
 
 <br/>
+
+
 

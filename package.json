@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "lodash": "^4.17.21",
     "parcel-bundler": "^1.12.5"

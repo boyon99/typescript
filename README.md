@@ -15,12 +15,13 @@
 - 전역 설치하기
 
   `npm i typescript -g`
-  
+
   > mac에서 전역으로 설치할 때의 오류 : 맨 앞에 sudo를 붙인 후 암호를 입력한다. 전역으로 설치하는 이유는 명령어를 사용하기 위함이다. (ts의 경우 tsc의 명령어)
-- 단일 프로젝트에서만 사용하기 
+
+- 단일 프로젝트에서만 사용하기
 
   `npm install -D typescript`
-  
+
   > 이런 경우 명령어를 사용하기 위해서는 `npx tsc`명령어를 입력해야 한다.
 
 <br/>
@@ -54,7 +55,6 @@ tsc --init // 초기화하면 `tsconfig.json` 파일이 추가된다.
 
 > [컴파일을 위한 다양한 옵션을 확인할 수 있는 공식문서](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
 
-
 <br/>
 
 ### Parcel
@@ -67,6 +67,8 @@ tsc --init // 초기화하면 `tsconfig.json` 파일이 추가된다.
 npm init -y
 npm install -D typescript parcel-bundler
 ```
+
+#### 세팅하기
 
 1. `tsconfig.json`에 작성하기
 
@@ -97,6 +99,7 @@ npm install -D typescript parcel-bundler
 ```
 
 4. 실행하기
+
 ```console
 npx parcel index.html
 ```
@@ -104,38 +107,68 @@ npx parcel index.html
 <br/>
 
 ### TS Node
+
 NodeJS 환경에서 테스트하고 싶은 경우 TS Node를 사용한다.
 
 #### 설치하기
+
 ```console
 npm init -y
 npm install -D typescript @types/node ts-node // @types/node는 Node.js API를 위한 타입 선언 모듈이다.
 ```
 
+#### 세팅하기
+
 1. `tsconfig.json`에 작성하기
+
 ```json
 {
   "compilerOptions": {
     "strict": true,
     "module": "CommonJS"
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
 ```
 
 2. main.ts 파일 생성 후 작성하기
+
 ```js
-console.log('TypeScript on NodeJS!');
+console.log("TypeScript on NodeJS!");
 ```
 
 3. TS Node를 사용해 main.ts를 실행하기
+
 ```shell
 npx ts-node main.js
 ```
 
 <br/>
 
+### nodemon
 
+서버를 내리고 올리지 않아도 소스를 변경할 때 바로 감지해서 자동으로 서버를 재시작 해주는 TOOL로 ts-node와 nodemon을 사용하여 자동 업데이트 할 수 있다.
 
+#### 설치하기
+
+```console
+npm i nodemon
+```
+
+#### 세팅하기
+
+1. package.json에 작성하기
+
+```json
+{
+  "dev": "nodemon --exec ts-node src/index.ts"
+}
+```
+
+2. 실행하기
+
+```console
+npm run dev
+```
+
+<br/>

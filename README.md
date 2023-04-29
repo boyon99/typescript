@@ -1,3 +1,10 @@
+- ts 디버깅 - https://code.visualstudio.com/docs/typescript/typescript-debugging
+  1. tscongig.json에서 map을 생성하게 설정함
+  2. 그 후 빌드한 이후 map이 생성되었는지 확인하기
+  3. .vscode/launch.json 파일 생성하기
+  4. 중단점 설정하기
+  5. 디버깅 시작하기 명령어 클릭하기
+
 # typescript
 
 - [TS 공식문서](https://www.typescriptlang.org/ko/)
